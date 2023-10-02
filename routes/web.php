@@ -13,25 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $name = 'Felipe';
-    $age = '24';
+use App\Http\Controllers\EventController;
 
-    $arr = [11, 24, 38, 42, 56];
+Route::get('/', [EventController::class, 'index']);
+Route::get('/events/create', [EventController::class, 'create']);
 
-    $names = ['Felipe', 'João', 'Maria'];
+// query parameters
+Route::get('/produtos', function () {
 
-    return view(
-        'welcome',
-        [
-            'name' => $name,
-            'age' => $age,
-            'arr' => $arr,
-            'names' => $names
-        ]
-    );
+  $busca = request('search');
+
+  return view('products', ['busca' => $busca]);
 });
 
-Route::get('/produtos', function () {
-    return view('products');
+// Route::get('/produtos/{id}', function ($id) {
+//     return view('product', ['id' => $id]);
+// });
+
+// optional parameter
+Route::get('/produtos_info/{id?}', function ($id = null) {
+  return view('product', ['id' => $id]);
 });
