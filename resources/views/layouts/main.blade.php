@@ -22,8 +22,9 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="collapse navbar-collapse" id="navbar">
-        <a href="" class="navbar-brand">
-          <img src="/assets/placeholder.png" alt="placeholder">
+        <a href="" class="navbar-brand" style="padding-left: 20px;">
+          <!-- <img src="/assets/placeholder.png" alt="placeholder"> -->
+          <ion-icon name="logo-web-component" size="large"></ion-icon>
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
