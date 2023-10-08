@@ -34,16 +34,23 @@ Route::get('/produtos_info/{id?}', function ($id = null) {
 */
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
+
+// age entre a acao de clicar no link e a view ser entregue
+// rota só pode ser acessada por um usuario logado
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
+
 Route::get('/events/{id}', [EventController::class, 'show']);
 Route::post('/events', [EventController::class, 'store']);
+Route::delete('/events/{id}', [EventController::class, 'destroy']);
 
-Route::middleware([
-  'auth:sanctum',
-  config('jetstream.auth_session'),
-  'verified',
-])->group(function () {
-  Route::get('/dashboard', function () {
-    return view('dashboard');
-  })->name('dashboard');
-});
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
+
+// Route::middleware([
+//   'auth:sanctum',
+//   config('jetstream.auth_session'),
+//   'verified',
+// ])->group(function () {
+//   Route::get('/dashboard', function () {
+//     return view('dashboard');
+//   })->name('dashboard');
+// });
