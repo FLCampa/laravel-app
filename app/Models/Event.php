@@ -15,6 +15,9 @@ class Event extends Model
 
   protected $dates = ['date'];
 
+  // contem campos do post que n podem ser alterados
+  protected $guarded = [];
+
   // evento pertence a um usuario (singular)
   public function user()
   {
