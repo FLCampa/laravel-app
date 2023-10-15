@@ -65,4 +65,16 @@ class User extends Authenticatable
     // return $this->belongsTo('App\Models\Event');
     return $this->hasMany(Event::class);
   }
+
+  public function eventsAsParticipant()
+  {
+    // belongsToMany($related, $table, $foreignPivotKey, $relatedPivotKey)
+    // return $this->belongsToMany(User::class, 'event_user', 'user_id', 'event_id');
+    return $this->belongsToMany(Event::class, 'event_user', 'user_id', 'event_id');
+  }
+
+  public function showEventsAsParticipant()
+  {
+    return $this->belongsToMany(Event::class);
+  }
 }
