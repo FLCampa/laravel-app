@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-md-10 offset-md-1 dashboard-title-container">
-  <h1>Meus Eventos</h1>
+  <h2>Meus Eventos</h2>
 </div>
 <div class="col-md-10 offset-md-1 dashboard-events-container">
   @if(count($events) > 0)
@@ -26,7 +26,7 @@
         <td>{{ count($event->users) }}</td>
         <td>
           <a href="/events/edit/{{ $event->id }}" class="btn btn-info edit-btn">
-            <ion-icon name="create-outline"></ion-icon> Editar
+            <ion-icon name="create-outline"></ion-icon> <span>Editar</span>
           </a>
           <form action="/events/{{ $event->id }}" method="POST">
             @csrf
@@ -47,7 +47,7 @@
 
 <!-- novo -->
 <div class="col-md-10 offset-md-1 dashboard-title-container">
-  <h1>Eventos que estou participando</h1>
+  <h2>Eventos que estou participando</h2>
 </div>
 <div class="col-md-10 offset-md-1 dashboard-events-container">
   @if(count($eventsasparticipant) > 0)

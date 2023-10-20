@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  padding-top: 90px;
+  padding-top: 67px;
   padding-bottom: 100px;
 }
 
@@ -69,8 +69,19 @@ header {
 }
 
 #navbar a {
-  font-size: 14px;
   color: #757575;
+  margin-left: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  padding: 0 !important;
+}
+
+.navbar-nav li:last-child a {
+  margin-right: 10px;
 }
 
 #navbar a:hover {
@@ -113,22 +124,32 @@ header {
 }
 
 #cards-container {
+  /* display: flex; */
+
   display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
+
+  gap: 32px;
 }
 
 #events-container .card {
-  flex: 1 1 0;
-  max-width: 100%;
-  max-width: 200px;
-  border-radius: 10px;
+  /* flex: 1 1 0; */
+  /* max-width: 100%; */
+  /* max-width: 200px; */
+  /* border-radius: 10px; */
   padding: 0;
-  margin: 5px;
+  /* margin: 5px; */
+  width: 200px;
+  height: 300px;
 }
 
 #events-container img {
-  max-height: 150px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* max-height: 150px; */
+  height: 120px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .card .card-date {
@@ -140,7 +161,7 @@ header {
   color: #212121;
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .card-participants {
@@ -157,10 +178,27 @@ header {
   font-weight: bold;
 }
 
+/* #event-create-container #image:hover {
+  cursor: pointer !important;
+}
+
+input[type=file],
+input[type=file]::-webkit-file-upload-button {
+  cursor: pointer; 
+} */
+
+input[type=checkbox]:hover {
+  cursor: pointer; 
+}
+
 #event-create-container input,
 #event-create-container select,
 #event-create-container textarea {
-  font-size: 12px;
+  font-size: 14px;
+}
+
+#event-create-container .group {
+  margin-bottom: 14px;
 }
 
 /* Event page */
@@ -222,6 +260,10 @@ header {
   width: 25%;
 }
 
+.dashboard-events-container td {
+  vertical-align: middle;
+}
+
 .dashboard-events-container form {
   display: inline-block;
 }
@@ -241,9 +283,10 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+  font-size: 10px;
 }
 
 footer > p {
   margin: 0;
-  padding: 2px 0;
+  padding: 1px 0;
 }
